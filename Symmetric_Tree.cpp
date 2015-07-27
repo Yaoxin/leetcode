@@ -21,27 +21,26 @@ struct TreeNode {
    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-void help(TreeNode * node, int level, vector<vector<int> > &v)
-{
-	
-	
-	level = level + 1;
-	if(node->left)
-		help(node->left, level, v);
-	if(node->right)
-		help(node->right, level, v);
-}
 
 
 class Solution {
 public:
+    //1、采用递归去解
+    //2、层序遍历
     bool isSymmetric(TreeNode* root) {
-    	if(root == NULL)
-    		return false;
-    	int level = 0;
-    	std::vector<vector<int> > v;
-    	help(root, level, v);
+        return root?isSymmetric(root->left, root->right):true;
+    }
 
-        
+    bool isSymmetric(TreeNode * left, TreeNode *right)
+    {
+        if(!left && !right)
+            return true;
+        if(!left || !right)
+            return false;
+        return left->val == right->val && isSymmetric(left->left, right->right) && \
+            isSymmetric(left->right, right->left);
     }
 };
+
+
+
