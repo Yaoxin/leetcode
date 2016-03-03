@@ -1,1 +1,0 @@
-baidu.d: ../baidu.cpp
