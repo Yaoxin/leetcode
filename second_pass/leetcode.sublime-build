@@ -7,7 +7,7 @@
     "variants":[
     {
         "name": "Run",
-        "cmd": ["bash", "-c", "g++ '${file}' '${file_path}/common/help.cpp' -o '${file_path}/${file_base_name}' && '${file_path}/${file_base_name}'"]
+        "cmd": ["bash", "-c", "g++ '${file}' '${file_path}/common/help.cpp' -o '${file_path}/.obj/${file_base_name}' && '${file_path}/.obj/${file_base_name}'"]
     }
     ]
 }
