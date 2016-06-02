@@ -32,8 +32,9 @@ struct ListNode {
 
     
 
-void print_vector(string msg, std::vector<int> v);
-void print_list(string, std::list<int> l);
+void print_vector(std::vector<int> v);
+ListNode * create_linklist(std::vector<int>v);
+void print_linklist(ListNode * head); 
 
 
 
