@@ -31,10 +31,9 @@ struct ListNode {
 
 
     
-
-void print_vector(std::vector<int> v);
 ListNode * create_linklist(std::vector<int>v);
-void print_linklist(ListNode * head); 
+void print_linklist(ListNode * head);
+void print_vector(std::vector<int> v); 
 
 
 

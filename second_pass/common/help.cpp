@@ -1,14 +1,5 @@
 #include "help.h"
 
-void print_vector(std::vector<int> v)
-{
-    cout << "Vector : ";
-    for(std::vector<int>::iterator i = v.begin(); i != v.end(); ++i)
-    {
-        cout << *i << " ";
-    }
-    cout << endl;
-}
 
 ListNode * create_linklist(std::vector<int>v) {
     ListNode * head = new ListNode(-1);
@@ -29,3 +20,14 @@ void print_linklist(ListNode * head) {
     }
     cout << endl;
 }
+
+void print_vector(std::vector<int> v)
+{
+    cout << "Vector : ";
+    for(std::vector<int>::iterator i = v.begin(); i != v.end(); ++i)
+    {
+        cout << *i << " ";
+    }
+    cout << endl;
+}
+
