@@ -9,6 +9,7 @@
 #include <set>
 #include <list>
 #include <algorithm>
+#include <stack>
 
 using namespace std;
 
@@ -28,6 +29,18 @@ struct ListNode {
      ListNode *next;
      ListNode(int x) : val(x), next(NULL) {}
  };
+
+template <typename T>
+void leetcode_swap(T &left, T &right) {
+    unsigned char *pleft = reinterpret_cast<unsigned char *>(&left);
+    unsigned char *pright = reinterpret_cast<unsigned char *>(&right);
+    for (unsigned long x = 0; x < sizeof(T); ++x)  
+    {  
+        pleft[x] ^= pright[x];  
+        pright[x] ^= pleft[x];  
+        pleft[x] ^= pright[x];  
+    }   
+}
 
 
     
