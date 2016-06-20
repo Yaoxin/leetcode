@@ -31,4 +31,63 @@ void print_vector(std::vector<int> v)
     cout << endl;
 }
 
+TreeNode * create_binary_tree(std::vector<int> v) 
+{
+    if(v.size() == 0 || v[0] == NULL_INT) {
+        return NULL;
+    }
+    int i = 0;
+    int len = v.size();
+    TreeNode * head = new TreeNode(v[i]);
+    deque<TreeNode *> queue;
+    queue.push_back(head);
+    while(!queue.empty()) {
+        TreeNode* node = queue.front();
+        if(++i < len && v[i] != NULL_INT) {
+            node->left = new TreeNode(v[i]);
+            queue.push_back(node->left);
+        }
+        if(++i < len && v[i] != NULL_INT) {
+            node->right = new TreeNode(v[i]);
+            queue.push_back(node->right);
+        }
+        queue.pop_front();
+    }
+    return head;
+}
+
+
+void print_binary_tree(TreeNode * root)
+{
+    cout << "Binary Tree: ";
+    if(root == NULL) {
+        return; 
+    }
+    deque<TreeNode *> queue;
+    queue.push_back(root);
+    cout << " " << root->val;
+    while(!queue.empty()) {
+        TreeNode * node = queue.front();
+        if(node->left || node->right) {
+            if(node->left) {
+                queue.push_back(node->left);
+                cout << " " << node->left->val;
+            } else {
+                cout << " #"; 
+            }
+            if(node->right) {
+                queue.push_back(node->right);
+                cout << " " << node->right->val;
+            } else {
+                cout << " #";
+            }
+        }
+        queue.pop_front();
+    }
+    cout << endl;
+
+
+}
+
+
 
