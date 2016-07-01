@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <stack>
 #include <limits>
+#include <cmath>
 
 #define NULL_INT numeric_limits<int>::min()
 #define MAX_INT numeric_limits<int>::max()
