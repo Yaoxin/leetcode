@@ -17,6 +17,9 @@
 #define MAX_INT numeric_limits<int>::max()
 #define MIN_INT numeric_limits<int>::min()
 
+#define BEGIN_PROFILE profile_begin();
+#define END_PROFILE profile_end();
+
 
 using namespace std;
 
@@ -55,7 +58,9 @@ ListNode * create_linklist(std::vector<int>v);
 void print_linklist(ListNode * head);
 void print_vector(std::vector<int> v);
 TreeNode * create_binary_tree(std::vector<int> v);
-void print_binary_tree(TreeNode * root); 
+void print_binary_tree(TreeNode * root);
+void profile_begin();
+void profile_end(); 
 
 
 

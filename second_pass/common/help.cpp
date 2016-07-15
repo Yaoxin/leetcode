@@ -1,5 +1,7 @@
 #include "help.h"
+#include <sys/time.h>
 
+struct timeval start_tv;
 
 ListNode * create_linklist(std::vector<int>v) {
     ListNode * head = new ListNode(-1);
@@ -85,8 +87,19 @@ void print_binary_tree(TreeNode * root)
         queue.pop_front();
     }
     cout << endl;
+}
 
+void profile_begin()
+{
+    gettimeofday(&start_tv, NULL);
+}
 
+void profile_end()
+{
+    struct timeval end_tv;
+    gettimeofday(&end_tv, NULL);
+    int interval = (end_tv.tv_sec - start_tv.tv_sec) * 1000 + (end_tv.tv_usec - start_tv.tv_usec) / 1000;
+    cout << "COST " << interval << " MSEC.";
 }
 
 
