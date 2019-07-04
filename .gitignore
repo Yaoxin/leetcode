@@ -30,5 +30,6 @@
 .idea
 .vscode
 sync.sh
+main.cpp
 cmake-build-debug
 CMakeLists.txt
